@@ -2,9 +2,7 @@
 
 ## What is This? 
 
-Is a quantity of zero and the thing the number line sits on the same thing? 
-
-We asked: what would happen if they weren't.
+What would happen if we unified undefined behaviors within computation? 
 
 A sort-native intermediate representation. Three constructors, four rules, before the first instruction.
 
