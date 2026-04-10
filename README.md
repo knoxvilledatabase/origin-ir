@@ -2,30 +2,36 @@
 
 ## What is This? 
 
-What would happen if we unified undefined behaviors within computation? 
+What would happen if undefined behaviors were unified within computation? 
 
-A sort-native intermediate representation. Three constructors, four rules, before the first instruction.
+What is the silicon tax for hardware spending energy checking for problems that don't exist?
 
-- **Origin** — nothing to retrieve. Everything downstream folds.
-- **Container** — the last known value is preserved. You know what you were holding.
-- **Contents** — safe territory. Arithmetic lives here.
-
-The sort isn't metadata about a value. It's what a value *is*.
-
-The result?
+What is this? A sort-native intermediate representation. Three constructors, four rules, before the first instruction.
 
 - 93.8% of a transformer's operations are safe by construction. No runtime check needed.
 - 8 zero-checks in a linear solver dissolved to 1 — the compiler now asks once, at the division.
 - 249 operations that a traditional compiler executes — computing NaN through 15 steps — were never emitted.
 - A real bug in production C code (stb_image, 7,988 lines) that UBSan missed was caught at the operation that caused it.
 
-If you see why those are different, run this:
+The sort isn't metadata about a value. It's what a value *is*.
 
 ```bash
 git clone https://github.com/knoxvilledatabase/origin-ir.git
 cd origin-ir
 cargo run
 ```
+
+## How it works
+
+Is the number zero ambiguous? 
+
+The number zero has a rich history which collapsed multiple meanings into one symbol. 
+
+We asked what would happen if we separated them.
+
+- **Origin** — nothing to retrieve. Everything downstream folds.
+- **Container** — the last known value is preserved. You know what you were holding.
+- **Contents** — safe territory. Arithmetic lives here.
 
 ---
 
