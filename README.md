@@ -17,7 +17,7 @@ The sort isn't metadata about a value. It's what a value *is*.
 The result?
 
 - 93.8% of a transformer's operations are safe by construction. No runtime check needed.
-- 8 redundant zero-checks in a linear solver dissolved to 1. The compiler asks once, at the division.
+- 8 zero-checks in a linear solver dissolved to 1 — the compiler now asks once, at the division.
 - 249 operations that a traditional compiler executes — computing NaN through 15 steps — were never emitted.
 - A real bug in production C code (stb_image, 7,988 lines) that UBSan missed was caught at the operation that caused it.
 
