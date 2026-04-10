@@ -33,6 +33,8 @@ We asked what would happen if we separated them.
 - **Container** — the last known value is preserved. You know what you were holding.
 - **Contents** — safe territory. Arithmetic lives here.
 
+The same three sorts applied to mathematics eliminated 98% of foundational infrastructure in the largest formal math library. [See the evidence.](https://github.com/knoxvilledatabase/origin-mathlib4)
+
 ---
 
 ## What We Found
