@@ -1,10 +1,23 @@
 # origin-ir
 
-A sort-native intermediate representation. What if zero and the ground were different things?
+## What is This? 
+
+Is a quantity of zero and the thing the numberline sits on the same thing? 
+
+We asked: what would happen if they weren't.
+
+The result? A sort-native intermediate representation where:
+
+- 93.8% of a transformer's operations are safe by construction. No runtime check needed.
+- 8 `≠ 0` hypotheses that mathematicians write by hand dissolved to 0.
+- 249 operations that a traditional compiler executes — computing NaN through 15 steps — were never emitted.
+- A real bug in production C code (stb_image, 7,988 lines) that UBSan missed was caught at the operation that caused it.
+
+
 
 ```
-contents(0) × contents(5) = contents(0)     // arithmetic. zero apples. still apples.
 origin      × contents(5) = origin           // absorption. the ground took it.
+contents(0) × contents(5) = contents(0)     // arithmetic. zero apples. still apples.
 ```
 
 If you see why those are different, run this:
