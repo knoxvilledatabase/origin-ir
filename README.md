@@ -6,19 +6,20 @@ Is a quantity of zero and the thing the number line sits on the same thing?
 
 We asked: what would happen if they weren't.
 
-The result? A sort-native intermediate representation where:
+A sort-native intermediate representation. Three constructors, four rules, before the first instruction.
+
+- **Origin** — the system hit its absolute boundary. Nothing to retrieve. Everything downstream folds.
+- **Container** — the boundary was crossed. The last known value is preserved. You know what you were holding.
+- **Contents** — safe territory. Arithmetic lives here. `contents(a) + contents(b) = contents(a + b)`.
+
+The sort isn't metadata about a value. It's what a value *is*.
+
+The result?
 
 - 93.8% of a transformer's operations are safe by construction. No runtime check needed.
 - 8 redundant zero-checks in a linear solver dissolved to 1. The compiler asks once, at the division.
 - 249 operations that a traditional compiler executes — computing NaN through 15 steps — were never emitted.
 - A real bug in production C code (stb_image, 7,988 lines) that UBSan missed was caught at the operation that caused it.
-
-
-
-```
-origin      × contents(5) = origin           // absorption. the ground took it.
-contents(0) × contents(5) = contents(0)     // arithmetic. zero apples. still apples.
-```
 
 If you see why those are different, run this:
 
@@ -29,14 +30,6 @@ cargo run
 ```
 
 ---
-
-A sort-native intermediate representation. Three constructors, four rules, before the first instruction.
-
-- **Origin** — the system hit its absolute boundary. Nothing to retrieve. Everything downstream folds.
-- **Container** — the boundary was crossed. The last known value is preserved. You know what you were holding.
-- **Contents** — safe territory. Arithmetic lives here. `contents(a) + contents(b) = contents(a + b)`.
-
-The sort isn't metadata about a value. It's what a value *is*.
 
 ## What We Found
 
