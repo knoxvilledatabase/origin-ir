@@ -1,5 +1,7 @@
 # origin-ir
 
+A sort-native intermediate representation. What if zero and the ground were different things?
+
 ```
 contents(0) × contents(5) = contents(0)     // arithmetic. zero apples. still apples.
 origin      × contents(5) = origin           // absorption. the ground took it.
