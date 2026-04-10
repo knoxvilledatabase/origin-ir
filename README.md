@@ -1,4 +1,4 @@
-# origin-ir
+# Origin-IR: A Proof of Concept for Unifying Undefined and Indeterminate Behaviors in Computation
 
 ## What is This? 
 
