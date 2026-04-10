@@ -2,7 +2,7 @@
 
 ## What is This? 
 
-Is a quantity of zero and the thing the numberline sits on the same thing? 
+Is a quantity of zero and the thing the number line sits on the same thing? 
 
 We asked: what would happen if they weren't.
 
